@@ -88,7 +88,7 @@ Suggestions, corrections, and additional compatibility information are welcome, 
 
 ## License
 
-Apache
+Apache-2.0
 
 ## Note
 
