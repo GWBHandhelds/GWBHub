@@ -86,10 +86,6 @@ Accurate game information helps make the database more useful to the Android gam
 
 Suggestions, corrections, and additional compatibility information are welcome, provided that submitted information is accurate and clearly describes the device and software configuration used.
 
-## License
-
-Apache-2.0
-
 ## Note
 
 This project is intended for game discovery and informational purposes. It is not affiliated with or endorsed by the owners or publishers of the games listed in the databases.
