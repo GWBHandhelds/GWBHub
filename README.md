@@ -1,7 +1,7 @@
 # GWBHub
----
+
 ## Introduction
----
+
 PC Games On Android & Ports On Android is a game discovery and compatibility database designed to help users explore PC games playable on Android devices and games that have been ported to Android.
 
 The application is built with AppSheet and uses Google Sheets to organize game information across two dedicated databases.
@@ -11,7 +11,7 @@ The application is built with AppSheet and uses Google Sheets to organize game i
 * **Home** — Browse recent additions from both databases in one convenient location.
   
 ## Compatibility
----
+
 Game compatibility can vary depending on the Android device, processor, GPU, operating system, emulator, graphics drivers, and software configuration.
 
 The database is intended to help users discover games and access available information about their compatibility.
@@ -24,7 +24,7 @@ The database is intended to help users discover games and access available infor
 Compatibility information may not be available for every device or game. Results on one device should not be assumed to apply to all Android devices.
 
 ## Features
----
+
 * **Unified Home page** — Access recent entries from both game databases.
 * **Latest entries** — Display the four newest entries from each database, for up to eight entries in total.
 * **Separate databases** — Keep PC games playable on Android distinct from games ported to Android.
@@ -33,7 +33,7 @@ Compatibility information may not be available for every device or game. Results
 * **Automated updates** — Use Google Apps Script to support spreadsheet automation, including date-added handling and Home page updates.
 
 ## Data Sources
----
+
 The application uses three primary spreadsheet tabs.
 
 * `Home` — Combines recent entries from both databases.
@@ -43,7 +43,7 @@ The application uses three primary spreadsheet tabs.
 The Home page is designed to display the latest entries while preserving access to the original records in their respective databases.
 
 ## Technology
----
+
 The project uses the following technologies:
 
 * [Google Sheets](https://www.google.com/sheets/about/) — Spreadsheet-based data storage.
@@ -51,7 +51,7 @@ The project uses the following technologies:
 * [Google Apps Script](https://developers.google.com/apps-script) — Spreadsheet automation and data management.
 
 ## Getting Started
----
+
 The application is intended to be accessed through its AppSheet interface.
 
 Once the application link is available, users can open the app, browse the Home page, and select either database to explore its entries.
@@ -65,11 +65,11 @@ Once the application link is available, users can open the app, browse the Home 
 **Application link:** *Add your AppSheet application URL here.*
 
 ## Project Status
----
+
 The project is actively being developed and refined. Its databases, navigation, and automation features may evolve as additional information and improvements are introduced.
 
 ## Bugs and Issues
----
+
 If you encounter incorrect information, broken navigation, or other application issues, consider documenting the affected game entry and the problem encountered.
 
 When reporting compatibility problems, include relevant details when possible, such as:
@@ -81,17 +81,17 @@ When reporting compatibility problems, include relevant details when possible, s
 * Steps to reproduce the issue.
 
 ## Contributing
----
+
 Accurate game information helps make the database more useful to the Android gaming community.
 
 Suggestions, corrections, and additional compatibility information are welcome, provided that submitted information is accurate and clearly describes the device and software configuration used.
 
 ## License
----
+
 Apache
 
 ## Note
----
+
 This project is intended for game discovery and informational purposes. It is not affiliated with or endorsed by the owners or publishers of the games listed in the databases.
 
 Users are responsible for ensuring that their use of games, game files, emulators, ports, and related software complies with applicable laws and licensing requirements.
