@@ -2,7 +2,7 @@
 
 ## Introduction
 
-PC Games On Android & Ports On Android is a game discovery and compatibility database designed to help users explore PC games playable on Android devices and games that have been ported to Android.
+GWBHub is a game discovery and compatibility database designed to help users explore PC games playable on Android devices and games that have been ported to Android.
 
 The application is built with AppSheet and uses Google Sheets to organize game information across two dedicated databases.
 
