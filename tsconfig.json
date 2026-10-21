@@ -1,0 +1,72 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@zite/*": [
+        "./src/__zite__/*"
+      ],
+      "@app": [
+        "./src/App.tsx"
+      ],
+      "@zite/endpoints-runtime-sdk": [
+        "./.zite/types/zite-endpoints-runtime-sdk.d.ts"
+      ],
+      "zite-endpoints-sdk": [
+        "./src/__zite__/sdk.ts"
+      ],
+      "zite-auth-sdk": [
+        "./src/__zite__/auth.ts"
+      ],
+      "zite-file-upload-sdk": [
+        "./src/__zite__/fileUpload.ts"
+      ],
+      "zite-integrations-backend-sdk": [
+        "./src/__zite__/integrations.ts"
+      ],
+      "zitejs/db": [
+        "../../.zite/db.ts"
+      ],
+      "zitejs/api": [
+        "./.zite/api.ts"
+      ],
+      "zitejs/auth": [
+        "../../node_modules/zitejs/dist/esm/auth/index.d.ts"
+      ],
+      "zitejs/auth/server": [
+        "../../node_modules/zitejs/dist/esm/auth/server.d.ts"
+      ],
+      "zitejs/backend": [
+        "./.zite/backend.ts"
+      ],
+      "zitejs/backend/base": [
+        "../../node_modules/zitejs/dist/esm/backend/index.d.ts"
+      ],
+      "zitejs/caller": [
+        "../../node_modules/zitejs/dist/esm/caller/index.d.ts"
+      ],
+      "zitejs/integrations": [
+        "./.zite/integrations/index.ts",
+        "./.zite/integrations/airtable.ts"
+      ],
+      "zitejs/email": [
+        "./.zite/integrations/email.ts"
+      ],
+      "zitejs/meta": [
+        "./.zite/meta.ts"
+      ],
+      "@project/components/*": [
+        "../../packages/components/*"
+      ]
+    },
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  }
+}

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Auto-restored theme variables */
+    --shadow-x: 0px;
+    --shadow-y: 1px;
+    --shadow-blur: 4px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.2;
+    --shadow-color: #000000;
+    --shadow-2xs: var(--shadow-x) var(--shadow-y) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+    --shadow-xs: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+    --shadow-sm: var(--shadow-x) var(--shadow-y) calc(var(--shadow-blur) * 1.5) var(--shadow-spread) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+    --shadow-md: calc(var(--shadow-x) * 2) calc(var(--shadow-y) * 2) calc(var(--shadow-blur) * 3) calc(var(--shadow-spread) - 1px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+    --shadow-lg: calc(var(--shadow-x) * 4) calc(var(--shadow-y) * 4) calc(var(--shadow-blur) * 5) calc(var(--shadow-spread) - 3px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+    --shadow-xl: calc(var(--shadow-x) * 6) calc(var(--shadow-y) * 6) calc(var(--shadow-blur) * 7) calc(var(--shadow-spread) - 5px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+    --shadow-2xl: calc(var(--shadow-x) * 8) calc(var(--shadow-y) * 8) calc(max(0px, var(--shadow-blur) * 9 - 8px)) calc(var(--shadow-spread) - 12px) color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 250%), transparent);
+    --shadow: var(--shadow-md);
+
+    --background: 0 0% 100%;
+    --foreground: 230 20% 10%;
+    --muted: 230 15% 95%;
+    --muted-foreground: 230 8% 45%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 20% 10%;
+    --border: 230 15% 90%;
+    --input: 230 15% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 20% 10%;
+    --primary: 145 70% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 15% 95%;
+    --secondary-foreground: 230 20% 10%;
+    --accent: 230 15% 95%;
+    --accent-foreground: 230 20% 10%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 45%;
+    --danger-text: 0 75% 50%;
+    --ring: 145 70% 45%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --chart-1: 145 70% 50%;
+    --chart-2: 45 95% 55%;
+    --chart-3: 25 95% 55%;
+    --chart-4: 0 80% 60%;
+    --chart-5: 200 80% 55%;
+    --font-sans: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --background: 228 22% 7%;
+    --foreground: 220 20% 94%;
+    --muted: 228 18% 13%;
+    --muted-foreground: 225 10% 60%;
+    --accent: 228 18% 15%;
+    --accent-foreground: 220 20% 94%;
+    --popover: 228 22% 9%;
+    --popover-foreground: 220 20% 94%;
+    --border: 228 16% 18%;
+    --input: 228 16% 20%;
+    --card: 228 20% 10%;
+    --card-foreground: 220 20% 94%;
+    --primary: 142 76% 52%;
+    --primary-foreground: 228 30% 8%;
+    --secondary: 228 18% 15%;
+    --secondary-foreground: 220 20% 94%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 42 95% 58%;
+    --danger-text: 0 85% 68%;
+    --ring: 142 76% 52%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+
+
+/* Hide the entire Made With Zite badge, including logo and close button */
+body > div:has(> a.branding-pill) {
+  display: none !important;
+}
+
