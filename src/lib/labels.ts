@@ -25,10 +25,16 @@ export const HIDDEN_TABS = ['Awesome Table Data'];
 
 // When Emulator/App is DroidDeck, only these fields apply (Game Name is always kept).
 const DROIDDECK_FIELDS = ['emulator/app', 'game name', 'status', 'app version', 'proton/wine version', 'device',
-  'resolution', 'steam input', 'date added', 'uploaded by'];
+  'resolution', 'steam input', 'additional info', 'date added', 'uploaded by'];
+
+  // When Emulator/App is GameHub, only these fields apply (Game Name is always kept).
+const GAMEHUB_FIELDS = ['emulator/app', 'game name', 'status', 'app version', 'proton/wine version', 'device',
+  'resolution', 'audio driver', 'graphics driver', 'driver version', 'dx wrapper', 'dxvk/vkd3d version', 'steam type', 'max device memory', 'box64/fexcore version', 'box64/fexcore preset', 'steam input', 'additional info', 'date added', 'uploaded by'];
 
 export function isFieldVisible(header: string, get: (h: string) => string | undefined) {
   const app = (get('Emulator/App') ?? '').trim().toLowerCase();
-  if (app !== 'droiddeck') return true;
-  return DROIDDECK_FIELDS.includes(header.trim().toLowerCase());
+  const h = header.trim().toLowerCase();
+  if (app === 'droiddeck') return DROIDDECK_FIELDS.includes(h);
+  if (app === 'gamehub') return GAMEHUB_FIELDS.includes(h);
+  return true;
 }
