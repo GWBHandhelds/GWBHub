@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth, loginWithRedirect } from 'zitejs/auth';
 import { Toaster } from '@project/components/ui/sonner';
@@ -20,28 +20,35 @@ function Splash() {
   );
 }
 
+// Pages that need a signed-in user (settings, my reports, account)
+function RequireSignIn({ children }: { children: ReactNode }) {
+  const { user, isLoading } = useAuth();
+  useEffect(() => { if (!isLoading && !user) loginWithRedirect(); }, [isLoading, user]);
+  if (isLoading || !user) return <Splash />;
+  return <>{children}</>;
+}
+
 export default function App() {
   const { user, isLoading } = useAuth();
   const [tabs, setTabs] = useState<string[] | null>(null);
 
   useEffect(() => { document.documentElement.classList.add('dark'); }, []);
   useEffect(() => {
-    if (!isLoading && !user) loginWithRedirect();
-    if (user) listTabs({}).then((r) => setTabs(r.tabs.filter((t) => !HIDDEN_TABS.includes(t)).sort((a, b) => Number(b === 'Home') - Number(a === 'Home')))).catch(() => setTabs([]));
-  }, [isLoading, user]);
+    listTabs({}).then((r) => setTabs(r.tabs.filter((t) => !HIDDEN_TABS.includes(t)).sort((a, b) => Number(b === 'Home') - Number(a === 'Home')))).catch(() => setTabs([]));
+  }, []);
 
-  if (isLoading || !user || !tabs) return <Splash />;
+  if (isLoading || !tabs) return <Splash />;
 
   return (
     <BrowserRouter>
-      <AppConfigProvider tabs={tabs}>
+      <AppConfigProvider key={user?.id ?? 'guest'} tabs={tabs}>
       <Toaster />
       <Routes>
         <Route element={<Layout tabs={tabs} />}>
           {tabs.map((t) => (
             <Route key={t} path={`/${slug(t)}`} element={<TabPage key={t} tab={t} readOnly={t === 'Home'} />} />
           ))}
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/settings" element={<RequireSignIn><SettingsPage /></RequireSignIn>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to={`/${slug(tabs.includes('Home') ? 'Home' : tabs[0] ?? '')}`} replace />} />
         </Route>
