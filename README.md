@@ -4,7 +4,7 @@
 
 GWBHub is a game discovery and compatibility database designed to help users explore PC games playable on Android devices and games that have been ported to Android.
 
-The application is built with AppSheet and uses Google Sheets to organize game information across two dedicated databases.
+The application is built with Zite and uses Google Sheets to organize game information across two dedicated databases.
 
 * **PC Games On Android** — Discover PC games that can be played on Android through compatible emulators, applications, and other software solutions.
 * **Ports On Android** — Explore games ported to Android from other platforms.
@@ -47,8 +47,8 @@ The Home page is designed to display the latest entries while preserving access 
 The project uses the following technologies:
 
 * [Google Sheets](https://www.google.com/sheets/about/) — Spreadsheet-based data storage.
-* [AppSheet](https://www.appsheet.com/) — Application interface, views, and navigation.
 * [Google Apps Script](https://developers.google.com/apps-script) — Spreadsheet automation and data management.
+* [Zite](https://www.zite.com/) — Application interface, views, and navigation.
 
 ## Getting Started
 
