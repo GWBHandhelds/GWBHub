@@ -31,10 +31,15 @@ const DROIDDECK_FIELDS = ['emulator/app', 'game name', 'status', 'app version', 
 const GAMEHUB_FIELDS = ['emulator/app', 'game name', 'status', 'app version', 'proton/wine version', 'device',
   'resolution', 'audio driver', 'graphics driver', 'driver version', 'dx wrapper', 'dxvk/vkd3d version', 'steam type', 'max device memory', 'box64/fexcore version', 'box64/fexcore preset', 'steam input', 'additional info', 'date added', 'uploaded by'];
 
+  // When Emulator/App is WinNative, only these fields apply (Game Name is always kept).
+const WINNATIVE_FIELDS = ['emulator/app', 'game name', 'status', 'app version', 'proton/wine version', 'device',
+  'resolution', 'audio driver', 'graphics driver', 'driver version', 'dx wrapper', 'dxvk/vkd3d version', 'steam type', 'max device memory', 'startup selection', '32-bit emulator', '64-bit emulator', 'box64/fexcore version', 'box64/fexcore preset', 'steam input', 'xinput api', 'directinput api', 'directinput mapper', 'additional info', 'date added', 'uploaded by'];
+
 export function isFieldVisible(header: string, get: (h: string) => string | undefined) {
   const app = (get('Emulator/App') ?? '').trim().toLowerCase();
   const h = header.trim().toLowerCase();
   if (app === 'droiddeck') return DROIDDECK_FIELDS.includes(h);
   if (app === 'gamehub') return GAMEHUB_FIELDS.includes(h);
+  if (app === 'winnative') return WINNATIVE_FIELDS.includes(h);
   return true;
 }
