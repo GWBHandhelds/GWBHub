@@ -21,7 +21,7 @@ type Props = {
   onAdded: () => void;
 };
 
-function Field({ h, value, onChange, options, suggestions }: { h: string; value: string; onChange: (v: string) => void; options?: string[]; suggestions?: string[] }) {
+export function Field({ h, value, onChange, options, suggestions }: { h: string; value: string; onChange: (v: string) => void; options?: string[]; suggestions?: string[] }) {
   if (options?.length)
     return (
       <Select value={value || undefined} onValueChange={onChange}>
