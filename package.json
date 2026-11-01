@@ -94,7 +94,7 @@
     "use-debounce": "10.0.6",
     "vite-plugin-insert-html": "^1.0.3",
     "zod": "3.24.2",
-    "zitejs": "0.9.136"
+    "zitejs": "0.9.148"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.72.1",
