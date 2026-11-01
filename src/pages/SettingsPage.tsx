@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { Trash2, Image as ImageIcon } from 'lucide-react';
+import { Trash2, Pencil, Image as ImageIcon } from 'lucide-react';
+import EditReportDialog from '../components/EditReportDialog';
 import GameImagePicker from '../components/GameImagePicker';
 import IconManager from '../components/IconManager';
 import DeleteAccount from '../components/DeleteAccount';
@@ -24,6 +25,7 @@ export default function SettingsPage() {
   const [open, setOpen] = useState<Report | null>(null);
   const [toDelete, setToDelete] = useState<Report | null>(null);
   const [pick, setPick] = useState<Report | null>(null);
+  const [editing, setEditing] = useState<Report | null>(null);
   const { images } = useAppConfig();
 
   const load = () => myReports({}).then((r) => setReports(r.reports)).catch(() => setReports([]));
@@ -68,6 +70,9 @@ export default function SettingsPage() {
                   <p className="truncate text-xs text-muted-foreground">{tabLabel(r.tab)}{r.device && ` · ${r.device}`}{r.dateAdded && ` · ${r.dateAdded}`}</p>
                 </div>
                 {r.status && <Badge className="rounded-full border-transparent bg-primary/15 text-primary shadow-none">{r.status}</Badge>}
+                <Button variant="ghost" size="icon" aria-label="Edit report" onClick={(e) => { e.stopPropagation(); setEditing(r); }}>
+                  <Pencil className="h-4 w-4" />
+                </Button>
                 <Button variant="ghost" size="icon" aria-label="Change image" onClick={(e) => { e.stopPropagation(); setPick(r); }}>
                   <ImageIcon className="h-4 w-4" />
                 </Button>
@@ -79,6 +84,7 @@ export default function SettingsPage() {
           </ul>
         )}
       </section>
+      <EditReportDialog report={editing} onClose={() => setEditing(null)} onSaved={load} />
       <IconManager />
       <DeleteAccount />
       <GameImagePicker open={!!pick} onOpenChange={(o) => !o && setPick(null)} tab={pick?.tab ?? ''} gameName={pick?.gameName ?? ''} />
